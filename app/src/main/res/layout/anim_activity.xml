@@ -70,7 +70,8 @@
             android:orientation="horizontal"
             android:layout_below="@id/viewAnim"
             android:background="@color/anim_layout_bg"
-            android:gravity="center_vertical">
+            android:gravity="center_vertical"
+            android:id="@+id/viewAnimLayout">
 
             <ImageView
                 android:id="@+id/scaleView"
@@ -85,6 +86,71 @@
                 android:text="文字"/>
 
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/objAnim"
+            android:background="@color/anim_title_bg"
+            android:layout_below="@id/viewAnimLayout"
+            android:text="Object Animation"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/anim_layout_bg"
+            android:layout_below="@id/objAnim">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/avator"
+                android:id="@+id/objAnimView1"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hide"
+                android:textAllCaps="false"
+                android:onClick="onClick"
+                android:layout_below="@id/objAnimView1"
+                android:id="@+id/objAnimBtn1"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="#FFFF8080"
+                android:id="@+id/objAnimView2"
+                android:layout_toRightOf="@id/objAnimView1"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Start"
+                android:onClick="onClick"
+                android:layout_alignLeft="@id/objAnimView2"
+                android:layout_below="@id/objAnimView2"
+                android:id="@+id/objAnimBtn2"/>
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/play_image"
+                android:layout_toRightOf="@id/objAnimView2"
+                android:id="@+id/objAnimView3"/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAllCaps="false"
+                android:text="Start"
+                android:onClick="onClick"
+                android:layout_below="@id/objAnimView3"
+                android:layout_alignLeft="@id/objAnimView3"
+                android:id="@+id/objAnimBtn3"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
 </ScrollView>

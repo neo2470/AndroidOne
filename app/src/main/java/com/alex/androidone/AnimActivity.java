@@ -1,5 +1,8 @@
 package com.alex.androidone;
 
+import android.animation.ArgbEvaluator;
+import android.animation.ObjectAnimator;
+import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
@@ -9,14 +12,15 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
+import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.alex.androidone.entity.FrameAnimationLoader;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by alex on 16-4-1.
@@ -53,6 +57,10 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
         TextView tranText = (TextView) findViewById(R.id.tranText);
         Animation tranAnim = AnimationUtils.loadAnimation(this, R.anim.text_translate_in);
         tranText.startAnimation(tranAnim);
+
+        objAnimView1 = (ImageView) findViewById(R.id.objAnimView1);
+        objAnimView2 = (ImageView) findViewById(R.id.objAnimView2);
+        objAnimView3 = (ImageView) findViewById(R.id.objAnimView3);
     }
 
     @Override
@@ -94,7 +102,51 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
         return frameAnim;
     }
 
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.objAnimBtn1 :
+                ObjectAnimator objAnim1 = null;
+                int flag = 0;
+                if(null != view.getTag()) {
+                    flag = (int) view.getTag();
+                }
+
+                if(0 == (flag&1)) {
+                    objAnim1 = ObjectAnimator.ofFloat(objAnimView1, "translationY", -objAnimView1.getHeight());
+                    flag = 1;
+                } else {
+                    objAnim1 = ObjectAnimator.ofFloat(objAnimView1, "translationY", 0);
+                    flag = 0;
+                }
+
+                objAnim1.setInterpolator(new AccelerateDecelerateInterpolator());
+                objAnim1.setDuration(200);
+                objAnim1.start();
+                view.setTag(flag);
+                break;
+            case R.id.objAnimBtn2 :
+                ValueAnimator valueObj = ObjectAnimator.ofInt(objAnimView2, "backgroundColor", 0xFFFF8080, 0xFF8080FF);
+                valueObj.setDuration(1000);
+                valueObj.setEvaluator(new ArgbEvaluator());
+                valueObj.setRepeatCount(ValueAnimator.INFINITE);
+                valueObj.setRepeatMode(ValueAnimator.REVERSE);
+                valueObj.start();
+                break;
+            case R.id.objAnimBtn3 :
+                ObjectAnimator objAnim3 = ObjectAnimator.ofFloat(objAnimView3, "rotation", 0, 360);
+                objAnim3.setDuration(3500);
+                objAnim3.setInterpolator(new LinearInterpolator());
+                objAnim3.setRepeatCount(ValueAnimator.INFINITE);
+                objAnim3.setRepeatMode(ValueAnimator.RESTART);
+                objAnim3.start();
+                break;
+        }
+    }
+
     private ImageView loadingView;
+    private ImageView objAnimView1;
+    private ImageView objAnimView2;
+    private ImageView objAnimView3;
 }
 
 /**
