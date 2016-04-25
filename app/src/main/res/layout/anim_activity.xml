@@ -28,21 +28,6 @@
                 android:layout_width="120dp"
                 android:layout_height="150dp" />
 
-            <!--<ImageView-->
-                <!--android:id="@+id/leftAnim"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="150dp" />-->
-
-            <!--<ImageView-->
-                <!--android:id="@+id/rightAnim"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="150dp" />-->
-
-            <!--<ImageView-->
-                <!--android:id="@+id/backAnim"-->
-                <!--android:layout_width="120dp"-->
-                <!--android:layout_height="150dp" />-->
-
             <ImageView
                 android:id="@+id/loadingAnim"
                 android:layout_width="100dp"
@@ -64,28 +49,58 @@
             android:layout_below="@id/frameAnimLayout"
             android:text="View Animation"/>
 
-        <LinearLayout
+        <HorizontalScrollView
+            android:id="@+id/viewAnimLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@id/viewAnim"
             android:background="@color/anim_layout_bg"
-            android:gravity="center_vertical"
-            android:id="@+id/viewAnimLayout">
+            android:layout_below="@id/viewAnim">
 
-            <ImageView
-                android:id="@+id/scaleView"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/avator"/>
-
-            <TextView
-                android:id="@+id/tranText"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="文字"/>
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
 
-        </LinearLayout>
+                <ImageView
+                    android:id="@+id/scaleView"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/avator"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="A"
+                    android:onClick="onClick"
+                    android:id="@+id/aAnim"/>
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="S"
+                    android:onClick="onClick"
+                    android:id="@+id/sAnim"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R"
+                    android:onClick="onClick"
+                    android:id="@+id/rAnim"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="T"
+                    android:onClick="onClick"
+                    android:id="@+id/tAnim"/>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
 
         <TextView
             android:layout_width="match_parent"
