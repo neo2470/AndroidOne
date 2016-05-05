@@ -2,6 +2,7 @@ package com.alex.androidone;
 
 import android.animation.ArgbEvaluator;
 import android.animation.ObjectAnimator;
+import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
 import android.content.res.Resources;
@@ -23,8 +24,10 @@ import android.view.animation.RotateAnimation;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.alex.androidone.entity.FrameAnimationLoader;
+import com.alex.androidone.view.CircleView;
 import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -62,9 +65,10 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
         objAnimView1 = (ImageView) findViewById(R.id.objAnimView1);
         objAnimView2 = (ImageView) findViewById(R.id.objAnimView2);
         objAnimView3 = (ImageView) findViewById(R.id.objAnimView3);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+        objAnimView4 = (TextView) findViewById(R.id.objAnimView4);
+        objAnimView5 = (CircleView) findViewById(R.id.objAnimView5);
+        objAnimView6 = (TextView) findViewById(R.id.objAnimView6);
+        objAnimView7 = (CircleView) findViewById(R.id.objAnimView7);
     }
 
     @Override
@@ -144,6 +148,43 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
                 objAnim3.setRepeatMode(ValueAnimator.RESTART);
                 objAnim3.start();
                 break;
+            case R.id.objAnimBtn4:
+                ValueAnimator objAnim4 = ValueAnimator.ofObject(new TypeEvaluator() {
+                    @Override
+                    public Object evaluate(float fraction, Object startValue, Object endValue) {
+
+                        int sv = (int)((Character)startValue);
+                        int ev = (int)((Character)endValue);
+
+                        return (char)((int) (sv + fraction * (ev - sv)));
+                    }
+                }, 'A', 'Z');
+                objAnim4.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
+                    @Override
+                    public void onAnimationUpdate(ValueAnimator animation) {
+                        char text = (Character) animation.getAnimatedValue();
+                        objAnimView4.setText(text+"");
+                    }
+                });
+                objAnim4.setDuration(10000);
+                objAnim4.setInterpolator(new LinearInterpolator());
+                objAnim4.start();
+                break;
+            case R.id.objAnimBtn5:
+                objAnimView5.playAnim();
+                break;
+            case R.id.objAnimBtn6:
+                ObjectAnimator objAnim6 = ObjectAnimator.ofInt(objAnimView6, "backgroundColor", 0xffff00ff, 0xffffff00, 0xffff00ff);
+                objAnim6.setDuration(3000);
+                objAnim6.setEvaluator(new ArgbEvaluator());
+                objAnim6.start();
+                break;
+            case R.id.objAnimBtn7:
+                ObjectAnimator objAnim7 = ObjectAnimator.ofInt(objAnimView7, "CircleRadius", 0, 50, 0, 50);
+                objAnim7.setDuration(3000);
+                objAnim7.setInterpolator(new LinearInterpolator());
+                objAnim7.start();
+                break;
             case R.id.aAnim:// alpha animation
                 AlphaAnimation alphaAnim = new AlphaAnimation(0.1f, 1.0f);
                 alphaAnim.setDuration(1000);
@@ -187,46 +228,10 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
     private ImageView objAnimView1;
     private ImageView objAnimView2;
     private ImageView objAnimView3;
-
-    @Override
-    public void onStart() {
-        super.onStart();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client.connect();
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Anim Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.alex.androidone/http/host/path")
-        );
-        AppIndex.AppIndexApi.start(client, viewAction);
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-        Action viewAction = Action.newAction(
-                Action.TYPE_VIEW, // TODO: choose an action type.
-                "Anim Page", // TODO: Define a title for the content shown.
-                // TODO: If you have web page content that matches this app activity's content,
-                // make sure this auto-generated web page URL is correct.
-                // Otherwise, set the URL to null.
-                Uri.parse("http://host/path"),
-                // TODO: Make sure this auto-generated app URL is correct.
-                Uri.parse("android-app://com.alex.androidone/http/host/path")
-        );
-        AppIndex.AppIndexApi.end(client, viewAction);
-        client.disconnect();
-    }
+    private TextView objAnimView4;
+    private CircleView objAnimView5;
+    private TextView objAnimView6;
+    private CircleView objAnimView7;
 }
 
 /**

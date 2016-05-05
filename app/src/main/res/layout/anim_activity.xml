@@ -110,62 +110,142 @@
             android:layout_below="@id/viewAnimLayout"
             android:text="Object Animation"/>
 
-        <RelativeLayout
+        <HorizontalScrollView
+            android:layout_below="@id/objAnim"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/anim_layout_bg"
-            android:layout_below="@id/objAnim">
+            android:background="@color/anim_layout_bg" >
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/avator"
-                android:id="@+id/objAnimView1"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Hide"
-                android:textAllCaps="false"
-                android:onClick="onClick"
-                android:layout_below="@id/objAnimView1"
-                android:id="@+id/objAnimBtn1"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/avator"
+                    android:id="@+id/objAnimView1"/>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:background="#FFFF8080"
-                android:id="@+id/objAnimView2"
-                android:layout_toRightOf="@id/objAnimView1"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hide"
+                    android:textAllCaps="false"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView1"
+                    android:id="@+id/objAnimBtn1"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="Start"
-                android:onClick="onClick"
-                android:layout_alignLeft="@id/objAnimView2"
-                android:layout_below="@id/objAnimView2"
-                android:id="@+id/objAnimBtn2"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:background="#FFFF8080"
+                    android:id="@+id/objAnimView2"
+                    android:layout_toRightOf="@id/objAnimView1"/>
 
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/play_image"
-                android:layout_toRightOf="@id/objAnimView2"
-                android:id="@+id/objAnimView3"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_alignLeft="@id/objAnimView2"
+                    android:layout_below="@id/objAnimView2"
+                    android:id="@+id/objAnimBtn2"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAllCaps="false"
-                android:text="Start"
-                android:onClick="onClick"
-                android:layout_below="@id/objAnimView3"
-                android:layout_alignLeft="@id/objAnimView3"
-                android:id="@+id/objAnimBtn3"/>
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/play_image"
+                    android:layout_toRightOf="@id/objAnimView2"
+                    android:id="@+id/objAnimView3"/>
 
-        </RelativeLayout>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView3"
+                    android:layout_alignLeft="@id/objAnimView3"
+                    android:id="@+id/objAnimBtn3"/>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="A"
+                    android:gravity="center"
+                    android:textSize="50sp"
+                    android:layout_toRightOf="@id/objAnimView3"
+                    android:id="@+id/objAnimView4"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView4"
+                    android:layout_alignLeft="@id/objAnimView4"
+                    android:id="@+id/objAnimBtn4"/>
+
+                <com.alex.androidone.view.CircleView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/objAnimView5"
+                    android:layout_toRightOf="@id/objAnimView4"
+                    android:background="@android:color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView5"
+                    android:layout_alignLeft="@id/objAnimView5"
+                    android:id="@+id/objAnimBtn5"/>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:text="A"
+                    android:gravity="center"
+                    android:textSize="50sp"
+                    android:layout_toRightOf="@id/objAnimView5"
+                    android:id="@+id/objAnimView6"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView6"
+                    android:layout_alignLeft="@id/objAnimView6"
+                    android:id="@+id/objAnimBtn6"/>
+
+                <com.alex.androidone.view.CircleView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/objAnimView7"
+                    android:layout_toRightOf="@id/objAnimView6"
+                    android:background="@android:color/black"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView7"
+                    android:layout_alignLeft="@id/objAnimView7"
+                    android:id="@+id/objAnimBtn7"/>
+
+
+            </RelativeLayout>
+
+        </HorizontalScrollView>
+
 
     </RelativeLayout>
 </ScrollView>
