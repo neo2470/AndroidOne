@@ -1,7 +1,10 @@
 package com.alex.androidone;
 
+import android.animation.Animator;
 import android.animation.ArgbEvaluator;
+import android.animation.Keyframe;
 import android.animation.ObjectAnimator;
+import android.animation.PropertyValuesHolder;
 import android.animation.TypeEvaluator;
 import android.animation.ValueAnimator;
 import android.app.Activity;
@@ -69,6 +72,7 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
         objAnimView5 = (CircleView) findViewById(R.id.objAnimView5);
         objAnimView6 = (TextView) findViewById(R.id.objAnimView6);
         objAnimView7 = (CircleView) findViewById(R.id.objAnimView7);
+        objAnimView8 = (ImageView) findViewById(R.id.objAnimView8);
     }
 
     @Override
@@ -185,6 +189,24 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
                 objAnim7.setInterpolator(new LinearInterpolator());
                 objAnim7.start();
                 break;
+            case R.id.objAnimBtn8:
+                Keyframe frame0 = Keyframe.ofFloat(0f, 0);
+                Keyframe frame1 = Keyframe.ofFloat(0.1f, -20f);
+                Keyframe frame2 = Keyframe.ofFloat(0.2f, 20f);
+                Keyframe frame3 = Keyframe.ofFloat(0.3f, -20f);
+                Keyframe frame4 = Keyframe.ofFloat(0.4f, 20f);
+                Keyframe frame5 = Keyframe.ofFloat(0.5f, -20f);
+                Keyframe frame6 = Keyframe.ofFloat(0.6f, 20f);
+                Keyframe frame7 = Keyframe.ofFloat(0.7f, -20f);
+                Keyframe frame8 = Keyframe.ofFloat(0.8f, 20f);
+                Keyframe frame9 = Keyframe.ofFloat(0.9f, -20f);
+                Keyframe frame10 = Keyframe.ofFloat(1, 0);
+                PropertyValuesHolder propertyValuesHolder = PropertyValuesHolder.ofKeyframe("rotation", frame0, frame1, frame2, frame3, frame4, frame5, frame6, frame7, frame8, frame9, frame10);
+
+                Animator animator = ObjectAnimator.ofPropertyValuesHolder(objAnimView8, propertyValuesHolder);
+                animator.setDuration(3000);
+                animator.start();
+                break;
             case R.id.aAnim:// alpha animation
                 AlphaAnimation alphaAnim = new AlphaAnimation(0.1f, 1.0f);
                 alphaAnim.setDuration(1000);
@@ -232,6 +254,7 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
     private CircleView objAnimView5;
     private TextView objAnimView6;
     private CircleView objAnimView7;
+    private ImageView objAnimView8;
 }
 
 /**

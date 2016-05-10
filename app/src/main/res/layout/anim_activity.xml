@@ -241,6 +241,23 @@
                     android:layout_alignLeft="@id/objAnimView7"
                     android:id="@+id/objAnimBtn7"/>
 
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/objAnimView8"
+                    android:layout_toRightOf="@id/objAnimView7"
+                    android:src="@drawable/phone"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAllCaps="false"
+                    android:text="Start"
+                    android:onClick="onClick"
+                    android:layout_below="@id/objAnimView8"
+                    android:layout_alignLeft="@id/objAnimView8"
+                    android:id="@+id/objAnimBtn8"/>
+
 
             </RelativeLayout>
 
