@@ -32,7 +32,7 @@ public class MainActivity extends ListActivity {
                 toStart = AnimActivity.class;
                 break;
             case 2 :
-                ;
+                toStart = LayoutAnimActivity.class;
                 break;
         }
 

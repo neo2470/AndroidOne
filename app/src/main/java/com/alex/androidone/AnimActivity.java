@@ -14,7 +14,6 @@ import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -31,8 +30,6 @@ import android.widget.TextView;
 
 import com.alex.androidone.entity.FrameAnimationLoader;
 import com.alex.androidone.view.CircleView;
-import com.google.android.gms.appindexing.Action;
-import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
 /**
@@ -50,7 +47,7 @@ public class AnimActivity extends Activity implements FrameAnimationLoader.onCre
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.anim_activity);
+        setContentView(R.layout.activity_anim);
 
         loadingView = (ImageView) findViewById(R.id.loadingAnim);
 
