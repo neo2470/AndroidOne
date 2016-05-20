@@ -28,6 +28,7 @@
 
         <activity android:name=".AnimActivity" />
         <activity android:name=".LayoutAnimActivity" />
+        <activity android:name=".RecyclerViewActivity" />
 
     </application>
 

@@ -34,6 +34,18 @@ public class MainActivity extends ListActivity {
             case 2 :
                 toStart = LayoutAnimActivity.class;
                 break;
+            case 3 :
+                ;
+                break;
+            case 4 :
+                toStart = RecyclerViewActivity.class;
+                break;
+            case 5 :
+                ;
+                break;
+            case 6 :
+                ;
+                break;
         }
 
         if(null != toStart) {
