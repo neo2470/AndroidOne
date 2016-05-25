@@ -1,7 +1,9 @@
 package com.alex.androidone;
 
 import android.app.Activity;
+import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.GridLayoutManager;
@@ -13,6 +15,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.alex.androidone.view.LinearLayoutManagerItemDecoration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -97,11 +101,13 @@ public class RecyclerViewActivity extends Activity {
         // set layout manager
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
 
-        layoutManager = new GridLayoutManager(this, 1);
+        layoutManager = new GridLayoutManager(this, 3);
 
 //        layoutManager = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
 
         recyclerView.setLayoutManager(layoutManager);
+
+        recyclerView.addItemDecoration(new LinearLayoutManagerItemDecoration(this, LinearLayoutManagerItemDecoration.VERTICAL_LIST));
 
         // add Animation
         recyclerView.setItemAnimator(new DefaultItemAnimator());
