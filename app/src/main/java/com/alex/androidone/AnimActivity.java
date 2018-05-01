@@ -30,19 +30,12 @@ import android.widget.TextView;
 
 import com.alex.androidone.entity.FrameAnimationLoader;
 import com.alex.androidone.view.CircleView;
-import com.google.android.gms.common.api.GoogleApiClient;
 
 /**
  * Created by alex on 16-4-1.
  * Android Animation
  */
 public class AnimActivity extends Activity implements FrameAnimationLoader.onCreateFrameAnimationListener {
-
-    /**
-     * ATTENTION: This was auto-generated to implement the App Indexing API.
-     * See https://g.co/AppIndexing/AndroidStudio for more information.
-     */
-    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

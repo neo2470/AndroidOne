@@ -35,7 +35,7 @@ public class MainActivity extends ListActivity {
                 toStart = LayoutAnimActivity.class;
                 break;
             case 3 :
-                ;
+                toStart = CustomViewActivity.class;
                 break;
             case 4 :
                 toStart = RecyclerViewActivity.class;

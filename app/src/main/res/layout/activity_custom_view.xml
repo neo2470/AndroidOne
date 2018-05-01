@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.alex.androidone.view.CustomView
+            android:id="@+id/customView"
+            android:layout_width="@dimen/default_size"
+            android:layout_height="@dimen/default_size"
+            android:background="#22ff0000" />
+
+        <com.alex.lib.view.PieChartView
+            android:id="@+id/pieChartView"
+            android:layout_width="@dimen/default_size"
+            android:layout_height="@dimen/default_size"
+            android:background="#220000ff"
+            android:layout_toRightOf="@id/customView"/>
+
+        <com.alex.lib.view.RadarChartView
+            android:layout_width="@dimen/default_size"
+            android:layout_height="@dimen/default_size"
+            android:background="#2200ff00"
+            android:layout_toRightOf="@+id/pieChartView"/>
+
+    </RelativeLayout>
+</ScrollView>
